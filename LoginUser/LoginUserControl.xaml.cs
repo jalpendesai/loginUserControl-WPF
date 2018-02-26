@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace LoginUser
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for LoginUserControl.xaml
     /// </summary>
     public partial class LoginUserControl : UserControl
     {
@@ -24,5 +24,39 @@ namespace LoginUser
         {
             InitializeComponent();
         }
+
+        //Login Name Interaction logic
+        public string LoginName
+        {
+            get { return (string)GetValue(LoginNameProperty); }
+            set { SetValue(LoginNameProperty, value); }
+        }
+
+        public static DependencyProperty LoginNameProperty =
+            DependencyProperty.Register(nameof(LoginName), typeof(string),
+                typeof(LoginUserControl), new PropertyMetadata("Login Name"));
+
+
+        //UserName Interaction logic
+        public string UserName
+        {
+            get { return (string)GetValue(UserNameProperty); }
+            set { SetValue(UserNameProperty, value); }
+        }
+
+        public static DependencyProperty UserNameProperty =
+            DependencyProperty.Register(nameof(UserName), typeof(string),
+                typeof(LoginUserControl), new PropertyMetadata("User Name Enter"));
+
+        //Password Interaction logic
+        public string Password
+        {
+            get { return (string)GetValue(PasswordProperty); }
+            set { SetValue(PasswordProperty, value); }
+        }
+
+        public static DependencyProperty PasswordProperty =
+            DependencyProperty.Register(nameof(Password), typeof(string),
+                typeof(LoginUserControl), new PropertyMetadata("Password Enter"));
     }
 }
